@@ -4,11 +4,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 import { LoaderComponent } from './loader/loader.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 
 @NgModule({
-  declarations: [HeaderComponent, SidemenuComponent, LoaderComponent],
+  declarations: [HeaderComponent, SidemenuComponent, LoaderComponent, HomeComponent],
   exports: [HeaderComponent, SidemenuComponent, LoaderComponent],
   imports: [CommonModule, RouterModule, MatButtonModule, MatProgressBarModule]
 })

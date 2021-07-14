@@ -1,6 +1,6 @@
 {
-  "name": "angular-testing-workshop",
-  "version": "1.4.0",
+  "name": "testable-architecture-angular",
+  "version": "1.0.0",
   "author": {
     "name": "Rainer Hahnekamp",
     "email": "rainer.hahnekamp@angulararchitects.io"
@@ -8,9 +8,7 @@
   "homepage": "https://angulararchitects.io",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host 0.0.0.0",
-    "start:dev-local": "ng serve --host 0.0.0.0 -c dev-local",
-    "start:non-mock": "ng serve --host 0.0.0.0 -c non-mock",
+    "start": "ng serve",
     "storybook": "nx run eternal:storybook",
     "build": "ng build",
     "test": "jest",
@@ -20,7 +18,6 @@
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e --skip-serve --headless",
     "e2e:watch": "ng e2e --watch",
-    "e2e:non-mock": "ng e2e --watch -c non-mock",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
     "affected:build": "nx affected:build",

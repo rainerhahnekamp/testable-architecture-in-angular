@@ -11,24 +11,10 @@ import { RouterModule } from '@angular/router';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyMaterialModule } from '@ngx-formly/material';
 import { FormlyMatDatepickerModule } from '@ngx-formly/material/datepicker';
-import { ActivateComponent } from './activate/activate.component';
-import { BasicComponent } from './sign-up/basic/basic.component';
-import { DetailComponent } from './sign-up/detail/detail.component';
-import { InterestsComponent } from './sign-up/interests/interests.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { TermsComponent } from './sign-up/terms/terms.component';
-import { SignInComponent } from './signIn/sign-in.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
-  declarations: [
-    SignInComponent,
-    BasicComponent,
-    DetailComponent,
-    InterestsComponent,
-    TermsComponent,
-    SignUpComponent,
-    ActivateComponent
-  ],
+  declarations: [SignInComponent],
   imports: [
     CommonModule,
     FormlyModule.forChild(),
@@ -36,11 +22,7 @@ import { SignInComponent } from './signIn/sign-in.component';
     RouterModule.forChild([
       {
         path: '',
-        children: [
-          { path: 'sign-in', component: SignInComponent },
-          { path: 'sign-up', component: SignUpComponent },
-          { path: 'activate/:id', component: ActivateComponent }
-        ]
+        children: [{ path: 'sign-in', component: SignInComponent }]
       }
     ]),
     MatButtonModule,

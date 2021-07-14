@@ -6,15 +6,14 @@ import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import {SharedModule} from "../shared/shared.module";
+import { SharedModule } from '../shared/shared.module';
 import { HolidaysEffects } from './+state/holidays.effects';
 import { holidaysFeatureKey, holidaysReducer } from './+state/holidays.reducer';
 import { HolidayCardComponent } from './holiday-card/holiday-card.component';
 import { HolidaysComponent } from './holidays/holidays.component';
-import { RequestInfoComponent } from './request-info/request-info.component';
 
 @NgModule({
-  declarations: [HolidaysComponent, RequestInfoComponent, HolidayCardComponent],
+  declarations: [HolidaysComponent, HolidayCardComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -24,10 +23,6 @@ import { RequestInfoComponent } from './request-info/request-info.component';
       {
         path: '',
         component: HolidaysComponent
-      },
-      {
-        path: 'request-info/:holidayId',
-        component: RequestInfoComponent
       }
     ]),
     StoreModule.forFeature(holidaysFeatureKey, holidaysReducer),

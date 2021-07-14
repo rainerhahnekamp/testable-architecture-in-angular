@@ -18,13 +18,12 @@ import { APP_ROUTES } from './app.routes';
 import { BaseUrlInterceptor } from './core/base-url.interceptor';
 import { CoreModule } from './core/core.module';
 import { LoadingInterceptor } from './core/loading.interceptor';
-import { HomeComponent } from './home/home.component';
 import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(localeDe, 'de-AT');
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
