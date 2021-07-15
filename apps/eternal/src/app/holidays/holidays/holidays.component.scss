@@ -3,9 +3,18 @@ div.container {
   justify-content: space-evenly;
   flex-wrap: wrap;
 
-  app-holiday-card {
+  div.holiday-card {
     display: flex;
     flex: 1 0 232px;
     margin: 2em;
+
+    mat-card {
+      max-width: 400px;
+
+      mat-card-actions {
+        text-align: center;
+      }
+    }
+
   }
 }

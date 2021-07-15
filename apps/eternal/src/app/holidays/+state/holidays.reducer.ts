@@ -12,8 +12,8 @@ const initialState: HolidaysState = { holidays: [] };
 
 export const holidaysReducer = createReducer<HolidaysState>(
   initialState,
-  on(holidaysActions.findHolidaysSuccess, (state, { holidays }) => ({
+  on(holidaysActions.findSuccess, (state, { holidays }) => ({
     ...state,
-    holidays,
+    holidays
   }))
 );

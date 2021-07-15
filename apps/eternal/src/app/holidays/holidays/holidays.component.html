@@ -1,4 +1,21 @@
+<p class="message">This is an error</p>
 <div class="container">
-  <app-holiday-card *ngFor="let holiday of holidays$ | async" [holiday]="holiday">
-  </app-holiday-card>
+  <div *ngFor="let holiday of holidays$ | async" class="holiday-card">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ holiday.title }}</mat-card-title>
+        <mat-card-subtitle>{{ holiday.teaser }}</mat-card-subtitle>
+      </mat-card-header>
+      <img [alt]="holiday.title" [src]="holiday.imageUrl" mat-card-image />
+      <mat-card-content>
+        {{ holiday.description }}
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="getBrochure(holiday)" color="primary" mat-raised-button>
+          Get a Brochure
+        </button>
+        <button (click)="showMore(holiday)" mat-raised-button>Show More</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>

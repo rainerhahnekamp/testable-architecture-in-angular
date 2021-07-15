@@ -8,7 +8,6 @@
   <ng-container *ngIf="user$ | async as user">
     <ng-container *ngIf="user.anonymous; else logout">
       <a data-test="btn-sign-in" mat-raised-button routerLink="/security/sign-in">Sign In</a>
-      <a data-test="btn-sign-up" mat-raised-button routerLink="/security/sign-up">Sign Up</a>
     </ng-container>
     <ng-template #logout>
       <a

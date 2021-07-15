@@ -15,9 +15,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { FormlyModule } from '@ngx-formly/core';
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
-import { BaseUrlInterceptor } from './core/base-url.interceptor';
 import { CoreModule } from './core/core.module';
 import { LoadingInterceptor } from './core/loading.interceptor';
+import { MockedSecurityInterceptor } from './shared/mocked-security.intercetpor';
 import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(localeDe, 'de-AT');
@@ -51,8 +51,12 @@ registerLocaleData(localeDe, 'de-AT');
       provide: MAT_DATE_LOCALE,
       useValue: 'de-AT'
     },
-    { provide: HTTP_INTERCEPTORS, multi: true, useClass: BaseUrlInterceptor },
     { provide: HTTP_INTERCEPTORS, multi: true, useClass: LoadingInterceptor },
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: MockedSecurityInterceptor
+    },
     { provide: LOCALE_ID, useValue: 'de-AT' },
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
