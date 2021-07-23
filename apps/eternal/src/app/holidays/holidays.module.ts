@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
@@ -19,6 +20,7 @@ import { HolidaysComponent } from './holidays/holidays.component';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
+    MatSnackBarModule,
     ReactiveFormsModule,
     RouterModule.forChild([
       {

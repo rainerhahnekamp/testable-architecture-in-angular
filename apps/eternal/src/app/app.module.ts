@@ -17,7 +17,7 @@ import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
 import { CoreModule } from './core/core.module';
 import { LoadingInterceptor } from './core/loading.interceptor';
-import { MockedSecurityInterceptor } from './shared/mocked-security.intercetpor';
+import { MockedSecurityInterceptor } from './shared/mocked-security.interceptor';
 import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(localeDe, 'de-AT');
