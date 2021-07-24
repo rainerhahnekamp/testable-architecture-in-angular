@@ -1,13 +1,12 @@
-<p class="message">This is an error</p>
 <div class="container">
   <div *ngFor="let holiday of holidays$ | async" class="holiday-card">
     <mat-card>
       <mat-card-header>
         <mat-card-title>{{ holiday.title }}</mat-card-title>
-        <mat-card-subtitle>{{ holiday.teaser }}</mat-card-subtitle>
+        <mat-card-subtitle class="h-8">{{ holiday.teaser }}</mat-card-subtitle>
       </mat-card-header>
-      <img [alt]="holiday.title" [src]="holiday.imageUrl" mat-card-image />
-      <mat-card-content>
+      <img [alt]="holiday.title" [src]="holiday.imageUrl" class="max-w-none" mat-card-image />
+      <mat-card-content class="h-16 overflow-clip overflow-hidden">
         {{ holiday.description }}
       </mat-card-content>
       <mat-card-actions>

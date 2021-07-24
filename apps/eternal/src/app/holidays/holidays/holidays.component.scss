@@ -1,10 +1,4 @@
 
-p.message {
-  border: 3px dashed green;
-  text-align: center;
-  margin-bottom: 2em;
-}
-
 div.container {
   display: flex;
   justify-content: space-evenly;
@@ -12,8 +6,8 @@ div.container {
 
   div.holiday-card {
     display: flex;
-    flex: 1 0 232px;
-    margin: 2em;
+    flex: 1 0 315px;
+    margin: 1em;
 
     mat-card {
       max-width: 400px;

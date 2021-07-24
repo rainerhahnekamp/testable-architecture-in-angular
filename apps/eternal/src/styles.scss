@@ -1,5 +1,7 @@
 @import "~@angular/material/theming";
 
+@import "~tailwindcss";
+
 @include mat-core();
 
 $palette: (
@@ -18,8 +20,7 @@ $palette: (
   A400: #51c8ff,
   A700: #37c0ff,
   contrast: (
-    50: #000000,
-    100: #000000,
+    50: #000000, 4 100: #000000,
     200: #000000,
     300: #000000,
     400: #000000,
@@ -45,6 +46,7 @@ $candy-app-theme: mat-light-theme(
     $candy-app-warn
 );
 @include angular-material-theme($candy-app-theme);
+
 
 body {
   margin: 0;

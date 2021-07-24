@@ -1,0 +1,26 @@
+<mat-toolbar class="flex" color="primary">
+  <button [mat-menu-trigger-for]="menu" class="example-icon" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <a routerLink="/home">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </a>
+    </button>
+    <button disabled mat-menu-item>
+      <a routerLink="/holidays">
+        <mat-icon>travel_explore</mat-icon>
+        <span>Holidays</span>
+      </a>
+    </button>
+    <button mat-menu-item>
+      <a routerLink="/security/sign-in">
+        <mat-icon>login</mat-icon>
+        <span>Sign In</span>
+      </a>
+    </button>
+  </mat-menu>
+  <span>Eternal</span>
+</mat-toolbar>

@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Store } from '@ngrx/store';
+import { concatMap, filter, tap } from 'rxjs/operators';
 import { holidaysActions } from '../+state/holidays.actions';
 import { fromHolidays } from '../+state/holidays.selectors';
-import { UserService } from '../../shared/user.service';
+import { AddressGetterComponent } from '../address-getter/address-getter.component';
 import { BrochureSender } from '../brochure-sender.service';
 import { Holiday } from '../holiday';
 
@@ -18,7 +19,6 @@ export class HolidaysComponent implements OnInit {
 
   constructor(
     private store: Store,
-    private userService: UserService,
     private snackBar: MatSnackBar,
     private brochureSender: BrochureSender,
     private matDialog: MatDialog
@@ -29,11 +29,14 @@ export class HolidaysComponent implements OnInit {
   }
 
   getBrochure(holiday: Holiday) {
-    this.userService.loadedUser$.subscribe((user) => {
-      if (user.anonymous) {
-        this.snackBar.open('You have to login first', 'OK', { verticalPosition: 'top' });
-      }
-    });
+    this.matDialog
+      .open(AddressGetterComponent)
+      .afterClosed()
+      .pipe(
+        filter((address) => !!address),
+        concatMap((address) => this.brochureSender.send(address, holiday)),
+        tap(() => this.snackBar.open('Brochure has been sent. Thank you!', 'OK'))
+      );
   }
 
   showMore(holiday: Holiday) {}
