@@ -1,7 +1,8 @@
-<div class="main hidden sm:flex">
+<div class="main">
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <app-header></app-header>
+      <app-mobile-header></app-mobile-header>
     </mat-toolbar-row>
   </mat-toolbar>
   <mat-drawer-container autosize>
@@ -13,10 +14,4 @@
       <router-outlet></router-outlet>
     </mat-drawer-content>
   </mat-drawer-container>
-</div>
-
-<div class="main sm:hidden">
-  <app-mobile-header></app-mobile-header>
-  <app-loader></app-loader>
-  <router-outlet></router-outlet>
 </div>

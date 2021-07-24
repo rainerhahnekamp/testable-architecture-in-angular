@@ -4,6 +4,18 @@ div.main {
   flex-direction: column;
   justify-content: stretch;
 
+  @media (max-width: 640px) {
+    mat-drawer, app-header {
+      display: none;
+    }
+  }
+
+  @media (min-width: 640px) {
+    app-mobile-header {
+      display: none;
+    }
+  }
+
   mat-toolbar {
     mat-toolbar-row {
       display: flex;

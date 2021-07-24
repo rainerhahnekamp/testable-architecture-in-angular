@@ -1,26 +1,20 @@
-<mat-toolbar class="flex" color="primary">
+<div class="flex items-center">
   <button [mat-menu-trigger-for]="menu" class="example-icon" mat-icon-button>
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <a routerLink="/home">
-        <mat-icon>home</mat-icon>
-        <span>Home</span>
-      </a>
-    </button>
-    <button disabled mat-menu-item>
-      <a routerLink="/holidays">
-        <mat-icon>travel_explore</mat-icon>
-        <span>Holidays</span>
-      </a>
-    </button>
-    <button mat-menu-item>
-      <a routerLink="/security/sign-in">
-        <mat-icon>login</mat-icon>
-        <span>Sign In</span>
-      </a>
-    </button>
+    <a mat-menu-item routerLink="/home">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </a>
+    <a mat-menu-item routerLink="/holidays">
+      <mat-icon>travel_explore</mat-icon>
+      <span>Holidays</span>
+    </a>
+    <a mat-menu-item routerLink="/security/sign-in">
+      <mat-icon>login</mat-icon>
+      <span>Sign In</span>
+    </a>
   </mat-menu>
-  <span>Eternal</span>
-</mat-toolbar>
+  <h1 class="pl-2">Eternal</h1>
+</div>

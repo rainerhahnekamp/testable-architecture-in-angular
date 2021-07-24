@@ -1,20 +1,18 @@
 <div class="container">
-  <div *ngFor="let holiday of holidays$ | async" class="holiday-card">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>{{ holiday.title }}</mat-card-title>
-        <mat-card-subtitle class="h-8">{{ holiday.teaser }}</mat-card-subtitle>
-      </mat-card-header>
-      <img [alt]="holiday.title" [src]="holiday.imageUrl" class="max-w-none" mat-card-image />
-      <mat-card-content class="h-16 overflow-clip overflow-hidden">
-        {{ holiday.description }}
-      </mat-card-content>
-      <mat-card-actions>
-        <button (click)="getBrochure(holiday)" color="primary" mat-raised-button>
-          Get a Brochure
-        </button>
-        <button (click)="showMore(holiday)" mat-raised-button>Show More</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
+  <mat-card *ngFor="let holiday of holidays$ | async" class="my-4 mx-4">
+    <mat-card-header>
+      <mat-card-title>{{ holiday.title }}</mat-card-title>
+      <mat-card-subtitle class="h-8">{{ holiday.teaser }}</mat-card-subtitle>
+    </mat-card-header>
+    <img [alt]="holiday.title" [src]="holiday.imageUrl" class="max-w-none" mat-card-image />
+    <mat-card-content class="h-16 overflow-clip overflow-hidden">
+      {{ holiday.description }}
+    </mat-card-content>
+    <mat-card-actions class="justify-evenly">
+      <button (click)="getBrochure(holiday)" color="primary" mat-raised-button>
+        Get a Brochure
+      </button>
+      <button (click)="showMore(holiday)" mat-raised-button>Show More</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
