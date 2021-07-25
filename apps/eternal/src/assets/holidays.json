@@ -4,7 +4,8 @@
     "title": "Vienna / Wien",
     "teaser": "Dive into the capital of the Habsburg empire",
     "imageUrl": "/assets/vienna.jpg",
-    "description": "With a population of almost 2 million, Vienna is the second largest German-speaking city and breathes history in every corner."
+    "description": "With a population of almost 2 million, Vienna is the second largest German-speaking city and breathes history in every corner.",
+    "onSale": true
   },
   {
     "id": 2,
@@ -32,13 +33,35 @@
     "title": "Copenhagen / København",
     "teaser": "Europe's most livable city",
     "imageUrl": "/assets/copenhagen.jpg",
-    "description": "Copenhagen is the capital of Denmark and is located on Seenland which is one of the three main Danish islands."
+    "description": "Copenhagen is the capital of Denmark and is located on Seenland which is one of the three main Danish islands.",
+    "soldOut": true
   },
   {
     "id": 6,
     "title": "Shanghai / 上海市",
     "teaser": "East meets West",
     "imageUrl": "/assets/shanghai.jpg",
-    "description": "Although not being the capital of China, Shanghai is a good choice to for a China voyage. It can be reached very easily and many Western companies use it for their Chinese headquarters."
+    "description": "Although not being the capital of China, Shanghai is a good choice to for a China voyage. It can be reached very easily."
+  },
+  {
+    "id": 7,
+    "title": "Florence/ Firenze",
+    "teaser": "Michelangelo’s David, da Vinci, and Chianti",
+    "imageUrl": "/assets/firenze.jpg",
+    "description": "Birthplace of the Renaissance. Many famous artists left their mark. You can marvel at them at the Uffizi Gallery."
+  },
+  {
+    "id": 8,
+    "title": "Granada",
+    "teaser": "Muslim history in Spain",
+    "imageUrl": "/assets/granada.jpg",
+    "description": "Birthplace of the Renaissance. Many famous artists left their mark. You can marvel at them at the Uffizi Gallery."
+  },
+  {
+    "id": 9,
+    "title": "Lübeck",
+    "teaser": "City of the Hanseatic League",
+    "imageUrl": "/assets/luebeck.jpg",
+    "description": "Birthplace of the Renaissance. Many famous artists left their mark. You can marvel at them at the Uffizi Gallery."
   }
 ]

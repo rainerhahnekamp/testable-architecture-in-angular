@@ -1,6 +1,8 @@
 @import "~@angular/material/theming";
 
-@import "~tailwindcss";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 @include mat-core();
 
@@ -49,7 +51,10 @@ $candy-app-theme: mat-light-theme(
 
 
 body {
-  background: #fafafa;
+  @media (max-width: 640px) {
+    background: #fafafa;
+  }
+
   @media (min-width: 640px) {
     margin: 0;
     opacity: 0.9;

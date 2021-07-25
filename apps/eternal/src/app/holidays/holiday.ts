@@ -8,4 +8,6 @@ export interface Holiday {
   durationInDays: number;
   minCount: number;
   maxCount: number;
+  onSale?: boolean;
+  soldOut?: boolean;
 }
