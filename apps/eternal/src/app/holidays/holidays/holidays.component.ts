@@ -38,6 +38,4 @@ export class HolidaysComponent implements OnInit {
         tap(() => this.snackBar.open('Brochure has been sent. Thank you!', 'OK'))
       );
   }
-
-  showMore(holiday: Holiday) {}
 }

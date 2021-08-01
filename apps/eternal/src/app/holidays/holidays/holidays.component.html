@@ -19,10 +19,14 @@
       {{ holiday.description }}
     </mat-card-content>
     <mat-card-actions class="justify-evenly">
-      <button (click)="getBrochure(holiday)" color="primary" mat-raised-button>
+      <button
+        (click)="getBrochure(holiday)"
+        color="primary"
+        data-test="btn-brochure"
+        mat-raised-button
+      >
         Get a Brochure
       </button>
-      <button (click)="showMore(holiday)" mat-raised-button>Show More</button>
     </mat-card-actions>
   </mat-card>
 </div>
