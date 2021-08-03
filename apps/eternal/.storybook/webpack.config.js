@@ -12,6 +12,8 @@ module.exports = async ({ config, mode }) => {
     configFile: './tsconfig.base.json'
   });
 
+  config.module.rules.exclude = '**/*.png';
+
   config.resolve.plugins
     ? config.resolve.plugins.push(tsPaths)
     : (config.resolve.plugins = [tsPaths]);
