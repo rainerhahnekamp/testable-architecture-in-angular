@@ -9,6 +9,8 @@ module.exports = {
     }
   },
   coverageDirectory: '../../coverage/apps/eternal',
+  collectCoverageFrom: ['./src/app/holidays/**/*.ts'],
+  testRunner: 'jest-jasmine2',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular'
   },

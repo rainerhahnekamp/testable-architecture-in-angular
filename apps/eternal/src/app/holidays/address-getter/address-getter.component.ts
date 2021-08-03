@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
 import { NominatimValidator } from '../nominatim-validator.service';
 import { validateAddress } from '../validate-address';
 
 @Component({
-  templateUrl: './address-getter.component.html'
+  selector: 'eternal-address-getter',
+  templateUrl: './address-getter.component.html',
+  styleUrls: ['./address-getter.component.scss']
 })
 export class AddressGetterComponent {
+  @Output() done = new EventEmitter<{ address: string; isValid: boolean }>();
+
   formGroup: FormGroup = this.formBuilder.group({
     address: [
       '',
@@ -18,13 +21,15 @@ export class AddressGetterComponent {
     ]
   });
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private nominatimValidator: NominatimValidator,
-    private matDialog: MatDialogRef<AddressGetterComponent>
-  ) {}
+  constructor(private formBuilder: FormBuilder, private nominatimValidator: NominatimValidator) {}
 
   handleSubmit() {
-    this.matDialog.close(this.formGroup.value.address);
+    if (this.formGroup.valid) {
+      this.done.emit({ address: this.formGroup.value.address, isValid: true });
+    }
+  }
+
+  handleCancel() {
+    this.done.emit({ address: '', isValid: false });
   }
 }

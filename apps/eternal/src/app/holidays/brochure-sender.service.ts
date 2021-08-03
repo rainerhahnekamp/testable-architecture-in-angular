@@ -1,11 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
 import { Holiday } from './holiday';
 
 @Injectable({ providedIn: 'root' })
 export class BrochureSender {
+  constructor(private httpClient: HttpClient) {}
+
   send(address: string, holiday: Holiday) {
-    console.info(`sending brochure for ${holiday.title} to ${address}`);
-    return of();
+    return this.httpClient.post('/holidays/send-brochure', {
+      address,
+      holidayId: holiday.id
+    });
   }
 }
