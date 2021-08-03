@@ -15,10 +15,15 @@ import { holidaysFeatureKey, holidaysReducer } from '../../+state/holidays.reduc
 import { AddressGetterComponent } from '../../address-getter/address-getter.component';
 import { createHoliday } from '../../holiday';
 import { HolidaysComponent } from '../holidays.component';
+import spyOn = jest.spyOn;
 
 describe('Holidays integration test', () => {
-  const setup = () => {
-    const fixture = TestBed.configureTestingModule({
+  let fixture: ComponentFixture<HolidaysComponent>;
+  let httpController: HttpTestingController;
+  let snackBar: MatSnackBar;
+
+  beforeEach(() => {
+    fixture = TestBed.configureTestingModule({
       declarations: [HolidaysComponent, AddressGetterComponent],
       imports: [
         NoopAnimationsModule,
@@ -33,18 +38,16 @@ describe('Holidays integration test', () => {
         EffectsModule.forRoot([HolidaysEffects])
       ]
     }).createComponent(HolidaysComponent);
+    snackBar = TestBed.inject(MatSnackBar);
+    httpController = TestBed.inject(HttpTestingController);
     fixture.detectChanges();
-    const httpController = TestBed.inject(HttpTestingController);
-    return { fixture, httpController };
-  };
+  });
+
   it('should instantiate', () => {
-    const { fixture } = setup();
     expect(fixture).toBeInstanceOf(ComponentFixture);
   });
 
   it('should show holidays', () => {
-    const { fixture, httpController } = setup();
-
     const req = httpController.expectOne((req) => !!req.url.match(/holidays/));
     req.flush([createHoliday({ title: 'Paris' }), createHoliday({ title: 'Rome / Roma' })]);
     fixture.detectChanges();
@@ -57,7 +60,6 @@ describe('Holidays integration test', () => {
   });
 
   it('should send the brochure if a valid address is given', fakeAsync(() => {
-    const { fixture, httpController } = setup();
     const holidaysReq = httpController.expectOne('/assets/holidays.json');
     holidaysReq.flush([createHoliday({ id: 5 })]);
     fixture.detectChanges();
@@ -83,8 +85,6 @@ describe('Holidays integration test', () => {
     fixture.detectChanges();
 
     // confirm sending
-    const snackBar = TestBed.inject(MatSnackBar);
-    const snackBarSpie = jest.spyOn(snackBar, 'open');
     const sendReq = httpController.expectOne((req) => {
       expect(req.url).toBe('/holidays/send-brochure');
       expect(req.body).toEqual({
@@ -93,10 +93,10 @@ describe('Holidays integration test', () => {
       });
       return true;
     });
+    const spy = spyOn(snackBar, 'open');
     sendReq.flush(true);
     flush();
-    fixture.detectChanges();
 
-    expect(snackBarSpie).toHaveBeenCalledWith('Brochure has been sent. Thank you!', 'OK');
+    expect(spy).toHaveBeenCalledWith('Brochure has been sent. Thank you!', 'OK');
   }));
 });

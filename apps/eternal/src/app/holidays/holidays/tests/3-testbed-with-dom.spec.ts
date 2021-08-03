@@ -8,7 +8,7 @@ import { By } from '@angular/platform-browser';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { of } from 'rxjs';
 import { BrochureSender } from '../../brochure-sender.service';
-import { createHoliday } from '../../holiday';
+import { createHoliday, Holiday } from '../../holiday';
 import { HolidaysComponent } from '../holidays.component';
 
 describe('TestBed-based test with DOM Interaction', () => {
@@ -22,6 +22,7 @@ describe('TestBed-based test with DOM Interaction', () => {
   let store: MockStore;
   let matSnackBar: MatSnackBar;
   let brochureSender: BrochureSender;
+  let holiday: Holiday;
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
@@ -34,6 +35,7 @@ describe('TestBed-based test with DOM Interaction', () => {
     }).createComponent(HolidaysComponent);
     component = fixture.componentInstance;
     store = TestBed.inject(MockStore);
+    holiday = createHoliday({ id: 1, title: 'Bangkok / กรุงเทพมหานคร' });
     brochureSender = TestBed.inject(BrochureSender);
     jest.spyOn(brochureSender, 'send').mockReturnValue(of(true));
     matSnackBar = TestBed.inject(MatSnackBar);
@@ -45,7 +47,6 @@ describe('TestBed-based test with DOM Interaction', () => {
   });
 
   it('should verify holidays are shown', fakeAsync(() => {
-    const holiday = createHoliday({ id: 1, title: 'Bangkok / กรุงเทพมหานคร' });
     jest
       .spyOn(store, 'dispatch')
       .mockImplementation(() => store.setState({ holiday: { holidays: [holiday] } }));
@@ -58,7 +59,6 @@ describe('TestBed-based test with DOM Interaction', () => {
   }));
 
   it('should show the address getter on selected holiday instead of the card', () => {
-    const holiday = createHoliday({ id: 1, title: 'Bangkok / กรุงเทพมหานคร' });
     jest
       .spyOn(store, 'dispatch')
       .mockImplementation(() => store.setState({ holiday: { holidays: [holiday] } }));
@@ -75,7 +75,6 @@ describe('TestBed-based test with DOM Interaction', () => {
   });
 
   it('should send the brochure on a valid address', () => {
-    const holiday = createHoliday({ id: 1, title: 'Bangkok / กรุงเทพมหานคร' });
     jest
       .spyOn(store, 'dispatch')
       .mockImplementation(() => store.setState({ holiday: { holidays: [holiday] } }));

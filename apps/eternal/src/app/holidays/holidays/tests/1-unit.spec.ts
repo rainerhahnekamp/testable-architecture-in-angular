@@ -67,5 +67,5 @@ describe('Holidays unit test', () => {
     });
 
     component.ngOnInit();
-  });
+  }, 1000);
 });

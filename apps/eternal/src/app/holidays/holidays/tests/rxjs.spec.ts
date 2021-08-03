@@ -26,6 +26,7 @@ describe('Holidays RxJs test', () => {
         assertType(BrochureSender)
       );
       component.ngOnInit();
+
       m.expect(component.holidays$).toBeObservable('h', { h: [holiday] });
     })
   );
