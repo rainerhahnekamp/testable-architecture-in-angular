@@ -3,11 +3,13 @@
 This is the example application for the talk "Testable Architecture in Angular"
 at the Reliable Web Summit.
 
-We have an existing holidays page where users can request more informations.
-There are four different user stories we want to test:
+There is a holidays `localhost:4200`/holidays` page where users can enter their
+address and a brochure (virtually) is sent to them. There are two main user
+stories we want to test:
 
-- The user is logged and we want to show just a confirmation message.
-- The user is not logged, we want to redirect to sign-in
-- The user is logged in but we don't have the address. Need to ask to fill-in
-  the data in the profile page.
-- There is some kind of error, and we like to ask the user to send an email
+1. If we open the holidays page, the holidays are listed in the form of an
+   material card layout.
+2. If we enter a valid address, a snackBar shows a confirmation message.
+
+These tests are done in different variations. They can be found
+in `/apps/eternal/src/app/holidays/holidays/test`.
