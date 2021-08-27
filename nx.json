@@ -25,6 +25,24 @@
     "eternal-e2e": {
       "tags": [],
       "implicitDependencies": ["eternal"]
+    },
+    "holidays-data": {
+      "tags": ["domain:holidays", "type:data"]
+    },
+    "holidays-feature": {
+      "tags": ["domain:holidays", "type:feature"]
+    },
+    "holidays-model": {
+      "tags": ["domain:holidays", "type:model"]
+    },
+    "holidays-ui": {
+      "tags": ["domain:holidays", "type:ui"]
+    },
+    "shared-address-getter": {
+      "tags": []
+    },
+    "shared-util": {
+      "tags": []
     }
   },
   "targetDependencies": {

@@ -17,7 +17,6 @@ import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
 import { CoreModule } from './core/core.module';
 import { LoadingInterceptor } from './core/loading.interceptor';
-import { BrochureSenderInterceptor } from './holidays/brochure-sender.interceptor';
 import { MockedSecurityInterceptor } from './shared/mocked-security.interceptor';
 import { SharedModule } from './shared/shared.module';
 
@@ -57,11 +56,6 @@ registerLocaleData(localeDe, 'de-AT');
       provide: HTTP_INTERCEPTORS,
       multi: true,
       useClass: MockedSecurityInterceptor
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      multi: true,
-      useClass: BrochureSenderInterceptor
     },
     { provide: LOCALE_ID, useValue: 'de-AT' },
     {

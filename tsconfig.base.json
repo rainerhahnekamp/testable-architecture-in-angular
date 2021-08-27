@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@eternal/holidays/data": ["libs/holidays/data/src/index.ts"],
+      "@eternal/holidays/feature": ["libs/holidays/feature/src/index.ts"],
+      "@eternal/holidays/model": ["libs/holidays/model/src/index.ts"],
+      "@eternal/holidays/ui": ["libs/holidays/ui/src/index.ts"],
+      "@eternal/shared/address-getter": ["libs/shared/address-getter/src/index.ts"],
+      "@eternal/shared/util": ["libs/shared/util/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

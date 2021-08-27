@@ -1,0 +1,14 @@
+<div class="container">
+  <ng-container *ngFor="let holiday of holidays$ | async">
+    <eternal-holiday-card
+      (brochureClick)="getBrochure(holiday)"
+      *ngIf="holiday.id !== selectedHolidayId; else addressGetter"
+      [holiday]="holiday"
+    ></eternal-holiday-card>
+    <ng-template #addressGetter>
+      <eternal-address-getter
+        (done)="handleAddressGetterDone($event, holiday)"
+      ></eternal-address-getter>
+    </ng-template>
+  </ng-container>
+</div>

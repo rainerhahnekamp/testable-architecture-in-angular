@@ -166,6 +166,150 @@
           }
         }
       }
+    },
+    "holidays-data": {
+      "projectType": "library",
+      "root": "libs/holidays/data",
+      "sourceRoot": "libs/holidays/data/src",
+      "prefix": "nx-testing",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/holidays/data"],
+          "options": {
+            "jestConfig": "libs/holidays/data/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/holidays/data/src/**/*.ts",
+              "libs/holidays/data/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "holidays-feature": {
+      "projectType": "library",
+      "root": "libs/holidays/feature",
+      "sourceRoot": "libs/holidays/feature/src",
+      "prefix": "nx-testing",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/holidays/feature"],
+          "options": {
+            "jestConfig": "libs/holidays/feature/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/holidays/feature/src/**/*.ts",
+              "libs/holidays/feature/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "holidays-model": {
+      "projectType": "library",
+      "root": "libs/holidays/model",
+      "sourceRoot": "libs/holidays/model/src",
+      "prefix": "nx-testing",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/holidays/model"],
+          "options": {
+            "jestConfig": "libs/holidays/model/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/holidays/model/src/**/*.ts",
+              "libs/holidays/model/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "holidays-ui": {
+      "projectType": "library",
+      "root": "libs/holidays/ui",
+      "sourceRoot": "libs/holidays/ui/src",
+      "prefix": "nx-testing",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/holidays/ui"],
+          "options": {
+            "jestConfig": "libs/holidays/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/holidays/ui/src/**/*.ts", "libs/holidays/ui/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "shared-address-getter": {
+      "projectType": "library",
+      "root": "libs/shared/address-getter",
+      "sourceRoot": "libs/shared/address-getter/src",
+      "prefix": "nx-testing",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/address-getter"],
+          "options": {
+            "jestConfig": "libs/shared/address-getter/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/address-getter/src/**/*.ts",
+              "libs/shared/address-getter/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "shared-util": {
+      "projectType": "library",
+      "root": "libs/shared/util",
+      "sourceRoot": "libs/shared/util/src",
+      "prefix": "nx-testing",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/util"],
+          "options": {
+            "jestConfig": "libs/shared/util/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/util/src/**/*.ts", "libs/shared/util/src/**/*.html"]
+          }
+        }
+      }
     }
   },
   "cli": {
