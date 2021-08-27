@@ -13,3 +13,5 @@ stories we want to test:
 
 These tests are done in different variations. They can be found
 in `/apps/eternal/src/app/holidays/holidays/test`.
+
+The solution branch follows the structure presented in my talk.
